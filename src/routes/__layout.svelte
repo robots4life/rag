@@ -15,16 +15,18 @@
 	import Footer from '$root/components/Footer.svelte';
 
 	export let url;
+	// https://flaviocopes.com/css-how-to-stick-bottom-flexbox/
+	// set the minimum height of the main container to the screen height so that there are no jumps in the layout during the transition
 </script>
 
-<main class="container border">
+<main class="container border min-h-screen flex flex-col">
 	<Nav />
 	<PageTransition url="{url}">
 		<!-- Everything inside this transition component will be animated! -->
 		<!-- In this example, that encompasses all the page contents besides the navbar. -->
 		<slot />
-		<Footer />
 	</PageTransition>
+	<Footer />
 </main>
 
 <style>
