@@ -1,0 +1,3 @@
+npm install graphql --save-dev --verbose
+
+npm install graphql-request --save-dev --verbose
