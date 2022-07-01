@@ -1,11 +1,11 @@
 <footer class="flex py-4 justify-between list-none text-4xl">
 	<li>
-		<p>Contact</p>
+		<a href="/contact">Contact</a>
 	</li>
 	<li>
-		<p>Copyright</p>
+		<p>Copyright 2022</p>
 	</li>
 	<li>
-		<p>Impressum</p>
+		<a href="/impressum">Impressum</a>
 	</li>
 </footer>

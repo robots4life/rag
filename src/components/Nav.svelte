@@ -11,4 +11,7 @@
 	<li>
 		<a href="/concerts">Concerts</a>
 	</li>
+	<li>
+		<a href="/gallery">Gallery</a>
+	</li>
 </nav>

@@ -3,8 +3,17 @@
 	console.log(API_URL);
 </script>
 
-<!-- <h1 class="text-4xl py-4">Welcome to SvelteKit</h1>
-<p class="text-2xl py-3">
-	Visit <a class="text-red-400" href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p> -->
-<h1>Ragatac Band - We Play Cool Reggae For Everyone</h1>
+<hr />
+<h1 class="text-8xl text-center py-4">Ragatac Band<br />We Play Cool Reggae<br />For Everyone</h1>
+<hr />
+<h2 class="text-6xl text-center py-4">Description of Music</h2>
+<hr />
+<div class="cta text-4xl flex py-4 justify-between list-none">
+	<li>
+		<a href="/music">Listen to our Music</a>
+	</li>
+	<li>
+		<a href="/band">Check out our Band</a>
+	</li>
+</div>
+<hr />
