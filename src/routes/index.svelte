@@ -4,7 +4,11 @@
 </script>
 
 <hr />
-<h1 class="text-8xl text-center py-4">Ragatac Band<br />We Play Cool Reggae<br />For Everyone</h1>
+<h1 class="text-8xl text-center py-4">
+	Ragatac Band <br />
+	We Play Cool Reggae <br />
+	For Everyone
+</h1>
 <hr />
 <h2 class="text-6xl text-center py-4">Description of Music</h2>
 <hr />

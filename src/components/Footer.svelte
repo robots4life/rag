@@ -1,4 +1,4 @@
-<footer class="flex py-4 justify-between list-none text-4xl">
+<footer class="text-2xl flex py-4 justify-between list-none">
 	<li>
 		<a href="/contact">Contact</a>
 	</li>
