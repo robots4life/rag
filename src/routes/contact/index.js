@@ -2,7 +2,9 @@ import { client } from '$lib/graphql-client';
 import { gql } from 'graphql-request';
 
 const GRAPH_CMS_MESSAGE_TOKEN = process.env['GRAPH_CMS_MESSAGE_TOKEN'];
-const requestHeaders = { authorization: 'Bearer ' + GRAPH_CMS_MESSAGE_TOKEN };
+
+// https://github.com/prisma-labs/graphql-request#incrementally-setting-headers
+client.setHeader('authorization', GRAPH_CMS_MESSAGE_TOKEN);
 
 export async function get() {
 	const getMessages = gql`
@@ -16,7 +18,7 @@ export async function get() {
 	`;
 	// https://github.com/prisma-labs/graphql-request#error-handling
 	try {
-		const messages = await client.request(getMessages, requestHeaders);
+		const messages = await client.request(getMessages);
 		console.log(JSON.stringify(messages, undefined, 2));
 		return {
 			status: 200,
