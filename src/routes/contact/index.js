@@ -1,36 +1,29 @@
 import { client } from '$lib/graphql-client';
 import { gql } from 'graphql-request';
 
-export async function get(request) {
-	try {
-		console.log(Date.now());
-		console.log(request.url.href);
-		console.log('contact index.js - GetMessages');
+const GRAPH_CMS_MESSAGE_TOKEN = process.env['GRAPH_CMS_MESSAGE_TOKEN'];
+const requestHeaders = { authorization: 'Bearer ' + GRAPH_CMS_MESSAGE_TOKEN };
 
-		const query = gql`
-			query GetMessages {
-				messages {
-					id
-					text
-				}
+export async function get() {
+	const getMessages = gql`
+		query getMessages {
+			messages(first: 1000) {
+				id
+				text
+				submitDateTimeUnix
 			}
-		`;
-
-		const { messages } = await client.request(query);
-		console.log(messages);
-
+		}
+	`;
+	// https://github.com/prisma-labs/graphql-request#error-handling
+	try {
+		const messages = await client.request(getMessages, requestHeaders);
+		console.log(JSON.stringify(messages, undefined, 2));
 		return {
 			status: 200,
-			body: {
-				messages
-			}
+			body: messages
 		};
 	} catch (error) {
-		return {
-			status: 500,
-			body: {
-				error: 'Server error : ' + error
-			}
-		};
+		console.error(JSON.stringify(error, undefined, 2));
+		process.exit(1);
 	}
 }

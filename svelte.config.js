@@ -4,7 +4,7 @@
 
 import adapter from '@sveltejs/adapter-static';
 
-import path from 'path'
+import path from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -29,7 +29,10 @@ const config = {
 		}),
 		prerender: {
 			// This can be false if you're using a fallback (i.e. SPA mode)
-			default: true
+			//
+			// default: true
+			// contact index.js post request : Cannot prerender pages that have endpoints with mutative methods
+			// so turning off for now
 		},
 		// Adapter Static end
 		vite: {
