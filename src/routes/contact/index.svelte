@@ -1,5 +1,8 @@
 <script>
 	export let messages;
+
+	let messageData =
+		'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus facere fuga eaque repudiandae, quidem exercitationem vitae eum, alias sed distinctio neque ipsum dolores maxime. Harum nobis expedita deserunt voluptatum aperiam!';
 </script>
 
 <h1>Contact Us Now</h1>
@@ -15,14 +18,6 @@
 {/each}
 
 <form action="/contact" method="post" autocomplete="off">
-	<input
-		aria-label="Enter your Tweet"
-		name="tweet"
-		placeholder="What's your hot take?"
-		type="text"
-	/>
-	<button class="btn" type="submit">
-		<!-- {charactersLeft === maxCharacters ? 'Tweet' : charactersLeft} -->
-		Click
-	</button>
+	<input bind:value="{messageData}" aria-label="Enter your Message" name="message" type="text" />
+	<button class="btn" type="submit">Send Your Message</button>
 </form>
