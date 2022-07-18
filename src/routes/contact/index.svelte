@@ -1,20 +1,25 @@
 <script>
 	export let messages;
 
-	let messageData = '';
+	let messageData =
+		'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nulla mollitia dignissimos.';
 
 	async function handleSubmit() {
-		console.log('Message sent..');
-		console.log(messageData);
-
+		let payload = {
+			messageData
+		};
+		let payloadJSON = JSON.stringify(payload);
+		console.log(payloadJSON);
 		try {
 			const response = await fetch('/contact', {
 				method: 'POST',
-				//
 				headers: { accept: 'application/json' },
-				body: new FormData(JSON.stringify(messageData))
+				body: payloadJSON
 			});
-		} catch (error) {}
+			console.log('Message sent..');
+		} catch (error) {
+			console.log(error);
+		}
 	}
 </script>
 
