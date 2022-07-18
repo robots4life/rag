@@ -19,8 +19,8 @@ export async function get() {
 	// https://github.com/prisma-labs/graphql-request#error-handling
 	try {
 		const messages = await client.request(getMessages);
-		console.log(JSON.stringify(messages, undefined, 2));
-		console.log(Date.now());
+		// console.log(JSON.stringify(messages, undefined, 2));
+		// console.log(Date.now());
 		return {
 			status: 200,
 			body: messages
@@ -34,7 +34,7 @@ export async function get() {
 // https://kit.svelte.dev/docs/routing#endpoints-body-parsing
 
 export async function post({ request }) {
-	const data = await request.json(); // json text formData
+	const data = await request.formData(); // json text formData
 	console.log(data);
 
 	return { status: 200 };

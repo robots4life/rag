@@ -1,8 +1,21 @@
 <script>
 	export let messages;
 
-	let messageData =
-		'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus facere fuga eaque repudiandae, quidem exercitationem vitae eum, alias sed distinctio neque ipsum dolores maxime. Harum nobis expedita deserunt voluptatum aperiam!';
+	let messageData = '';
+
+	async function handleSubmit() {
+		console.log('Message sent..');
+		console.log(messageData);
+
+		try {
+			const response = await fetch('/contact', {
+				method: 'POST',
+				//
+				headers: { accept: 'application/json' },
+				body: new FormData(JSON.stringify(messageData))
+			});
+		} catch (error) {}
+	}
 </script>
 
 <h1>Contact Us Now</h1>
@@ -17,7 +30,7 @@
 	<hr />
 {/each}
 
-<form action="/contact" method="post" autocomplete="off">
-	<input bind:value="{messageData}" aria-label="Enter your Message" name="message" type="text" />
-	<button class="btn" type="submit">Send Your Message</button>
+<form on:submit|preventDefault="{handleSubmit}" action="/contact" method="post">
+	<input type="text" aria-label="Enter your text" bind:value="{messageData}" name="message" />
+	<button type="submit">Submit</button>
 </form>
