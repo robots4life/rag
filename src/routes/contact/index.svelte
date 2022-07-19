@@ -10,27 +10,25 @@
 <h1 class="text-8xl text-center my-8">Send Your Messge</h1>
 <hr />
 
-<div class="w-full text-2xl text-center py-8">
+<div class="w-full text-2xl text-center py-8" action="/contact" method="get">
 	<form class="py-8">
 		<div class="py-2">
-			<label class="block text-gray-700 font-bold py-2" for="name" name="message_name">
-				Name
-			</label>
+			<label class="block text-gray-700 font-bold py-2" for="message_name"> Name </label>
 			<input
 				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
-				id="name"
+				id="message_name"
+				name="message_name"
 				type="text"
 				placeholder="Your Name"
 				bind:value="{messageName}"
 			/>
 		</div>
 		<div class="py-2">
-			<label class="block text-gray-700 font-bold py-2" for="message" name="message_text">
-				Message
-			</label>
+			<label class="block text-gray-700 font-bold py-2" for="message_text"> Message </label>
 			<input
 				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
-				id="message"
+				id="message_name"
+				name="message_text"
 				type="text"
 				placeholder="Your Message"
 				bind:value="{messageText}"
