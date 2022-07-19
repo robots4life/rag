@@ -33,8 +33,8 @@
 	</div>
 {/if}
 
-<h1 class="text-8xl text-center my-8">Send Your Messge</h1>
-<hr />
+<!-- <h1 class="text-8xl text-center my-8">Send Your Messge</h1>
+<hr /> -->
 
 <div class="w-full text-2xl text-center py-8">
 	<form class="bg-white shadow-md rounded py-8">
