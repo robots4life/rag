@@ -34,10 +34,13 @@ const config = {
 			// contact index.js post request : Cannot prerender pages that have endpoints with mutative methods
 			// so turning off for now
 		},
-		// not needed for form method="PUT"
+		//
+		// See https://kit.svelte.dev/docs/configuration#methodoverride
+		//
 		methodOverride: {
-			allowed: ['PUT', 'DELETE']
+			allowed: ['POST', 'PUT', 'DELETE']
 		},
+
 		// Adapter Static end
 		vite: {
 			server: {

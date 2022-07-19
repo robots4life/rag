@@ -11,7 +11,11 @@
 <hr />
 
 <div class="w-full text-2xl text-center py-8">
-	<form class="py-8" action="/contact/submit?_method=DELETE" method="POST">
+	<!-- form without ?_method=POST defaults to the POST request -->
+	<!-- <form class="py-8" action="/contact/submit" method="POST"> -->
+
+	<!-- form without ?_method=POST and without method="POST" defaults to the GET request -->
+	<form class="py-8" action="/contact/submit">
 		<div class="py-2">
 			<label class="block text-gray-700 font-bold py-2" for="name"> Name </label>
 			<input
