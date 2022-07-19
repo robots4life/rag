@@ -13,7 +13,9 @@
 <div class="w-full text-2xl text-center py-8">
 	<form class="py-8">
 		<div class="py-2">
-			<label class="block text-gray-700 font-bold py-2" for="name"> Name </label>
+			<label class="block text-gray-700 font-bold py-2" for="name" name="message_name">
+				Name
+			</label>
 			<input
 				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
 				id="name"
@@ -23,7 +25,9 @@
 			/>
 		</div>
 		<div class="py-2">
-			<label class="block text-gray-700 font-bold py-2" for="message"> Message </label>
+			<label class="block text-gray-700 font-bold py-2" for="message" name="message_text">
+				Message
+			</label>
 			<input
 				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
 				id="message"
