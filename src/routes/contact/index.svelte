@@ -3,6 +3,25 @@
 
 	let messageName = 'Mary';
 	let messageText = 'Lorem ipsum dolor sit amet.';
+
+	export const handleSubmit = async (event) => {
+		console.log(event);
+
+		const form = event.target;
+		console.log(form);
+
+		try {
+			const response = await fetch('/contact/submit', {
+				method: 'POST',
+				headers: { accept: 'application/json' },
+				body: new FormData(form)
+			});
+			// reset the form after submit
+			// form.reset();
+		} catch (error) {
+			console.log(error);
+		}
+	};
 </script>
 
 <!-- {JSON.stringify(messages, null, 2)} -->
@@ -11,16 +30,24 @@
 <hr />
 
 <div class="w-full text-2xl text-center py-8">
-	<!-- form without ?_method=POST and without method="POST" defaults to the GET request -->
+	<!-- POST request form without ?_method=POST and without method="POST" defaults to the GET request -->
 	<!-- <form class="py-8" action="/contact/submit"> -->
 
-	<!-- form without ?_method=POST defaults to the POST request with method="POST"-->
-	<form class="py-8" action="/contact/submit" method="POST">
-		<!-- PUT request with method parameter set to PUT with method="POST"-->
-		<!-- <form class="py-8" action="/contact/submit?_method=PUT" method="POST"> -->
+	<!-- POST request without ?_method=POST defaults to the POST request with method="POST"-->
+	<!-- <form class="py-8" action="/contact/submit" method="POST"> -->
 
-		<!-- DELETE request with method parameter set to DELETE with method="POST"-->
-		<!-- <form class="py-8" action="/contact/submit?_method=DELETE" method="POST"> -->
+	<!-- PUT request with method parameter set to PUT with method="POST"-->
+	<!-- <form class="py-8" action="/contact/submit?_method=PUT" method="POST"> -->
+
+	<!-- DELETE request with method parameter set to DELETE with method="POST"-->
+	<!-- <form class="py-8" action="/contact/submit?_method=DELETE" method="POST"> -->
+
+	<form
+		on:submit|preventDefault="{handleSubmit}"
+		class="py-8"
+		action="/contact/submit"
+		method="POST"
+	>
 		<div class="py-2">
 			<label class="block text-gray-700 font-bold py-2" for="name"> Name </label>
 			<input
