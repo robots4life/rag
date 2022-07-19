@@ -5,6 +5,9 @@ export const enhance = (form) => {
 		console.log(event);
 		event.preventDefault();
 
+		const form = event.target;
+		console.log(form);
+
 		const response = await fetch(form.action, {
 			method: form.method,
 			headers: { accept: 'application/json' },
