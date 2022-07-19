@@ -36,7 +36,7 @@ const config = {
 		},
 		// not needed for form method="PUT"
 		methodOverride: {
-			allowed: ['PUT']
+			allowed: ['PUT', 'DELETE']
 		},
 		// Adapter Static end
 		vite: {
