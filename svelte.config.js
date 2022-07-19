@@ -34,6 +34,10 @@ const config = {
 			// contact index.js post request : Cannot prerender pages that have endpoints with mutative methods
 			// so turning off for now
 		},
+		// not needed for form method="POST"
+		// methodOverride: {
+		// 	allowed: ['PUT']
+		// },
 		// Adapter Static end
 		vite: {
 			server: {

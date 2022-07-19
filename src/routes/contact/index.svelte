@@ -11,7 +11,7 @@
 <hr />
 
 <div class="w-full text-2xl text-center py-8">
-	<form class="py-8" action="/contact/submit">
+	<form class="py-8" action="/contact/submit" method="GET">
 		<div class="py-2">
 			<label class="block text-gray-700 font-bold py-2" for="name"> Name </label>
 			<input
