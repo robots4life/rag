@@ -6,10 +6,7 @@ const GRAPH_CMS_MESSAGE_TOKEN = process.env['GRAPH_CMS_MESSAGE_TOKEN'];
 // https://github.com/prisma-labs/graphql-request#incrementally-setting-headers
 client.setHeader('authorization', GRAPH_CMS_MESSAGE_TOKEN);
 
-export const get = async ({ request }) => {
-	// const data = await request;
-	// console.log(data);
-
+export const get = async () => {
 	const getMessages = gql`
 		query getMessages {
 			messages(first: 1000) {
