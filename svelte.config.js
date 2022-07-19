@@ -38,7 +38,7 @@ const config = {
 		// See https://kit.svelte.dev/docs/configuration#methodoverride
 		//
 		methodOverride: {
-			allowed: ['POST', 'PUT', 'DELETE']
+			allowed: ['PUT', 'DELETE']
 		},
 
 		// Adapter Static end
