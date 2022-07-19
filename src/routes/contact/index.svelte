@@ -1,4 +1,5 @@
 <script>
+	import { enhance } from '$root/lib/form';
 	export let messages;
 
 	let messageName = 'Mary';
@@ -42,12 +43,21 @@
 	<!-- DELETE request with method parameter set to DELETE with method="POST"-->
 	<!-- <form class="py-8" action="/contact/submit?_method=DELETE" method="POST"> -->
 
-	<form
+	<!-- -------------- -->
+	<!-- handleSubmit   -->
+	<!-- -------------- -->
+
+	<!-- <form
 		on:submit|preventDefault="{handleSubmit}"
 		class="py-8"
 		action="/contact/submit"
 		method="POST"
-	>
+	> -->
+
+	<!-- -------------- -->
+	<!-- enhance action -->
+	<!-- -------------- -->
+	<form use:enhance class="py-8" action="/contact/submit" method="POST">
 		<div class="py-2">
 			<label class="block text-gray-700 font-bold py-2" for="name"> Name </label>
 			<input
