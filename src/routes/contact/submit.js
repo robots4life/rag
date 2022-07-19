@@ -78,8 +78,8 @@ export const put = async ({ request }) => {
 	return {
 		status: 200,
 		body: {
-			name: form.has('message_name') ? form.get('message_name').toString() : '',
-			message: form.has('message_text') ? form.get('message_text').toString() : ''
+			name: formData.has('message_name') ? formData.get('message_name').toString() : '',
+			message: formData.has('message_text') ? formData.get('message_text').toString() : ''
 		}
 	};
 };
@@ -92,10 +92,10 @@ export const del = async ({ request }) => {
 	const formData = await request.formData();
 
 	// https://youtu.be/nmX-utfgeK4?t=403 !!!
-	const messageName = form.has('message_name') ? form.get('message_name').toString() : '';
+	const messageName = formData.has('message_name') ? formData.get('message_name').toString() : '';
 	console.log(messageName);
 
-	const messageText = form.has('message_text') ? form.get('message_text').toString() : '';
+	const messageText = formData.has('message_text') ? formData.get('message_text').toString() : '';
 	console.log(messageText);
 
 	// submit the native form data and return to the from page
@@ -109,8 +109,8 @@ export const del = async ({ request }) => {
 	return {
 		status: 200,
 		body: {
-			name: form.has('message_name') ? form.get('message_name').toString() : '',
-			message: form.has('message_text') ? form.get('message_text').toString() : ''
+			name: formData.has('message_name') ? formData.get('message_name').toString() : '',
+			message: formData.has('message_text') ? formData.get('message_text').toString() : ''
 		}
 	};
 };
