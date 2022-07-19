@@ -46,18 +46,16 @@
 	<!-- -------------- -->
 	<!-- handleSubmit   -->
 	<!-- -------------- -->
-
-	<!-- <form
+	<form
 		on:submit|preventDefault="{handleSubmit}"
 		class="py-8"
 		action="/contact/submit"
 		method="POST"
-	> -->
-
-	<!-- -------------- -->
-	<!-- enhance action -->
-	<!-- -------------- -->
-	<form use:enhance class="py-8" action="/contact/submit" method="POST">
+	>
+		<!-- -------------- -->
+		<!-- enhance action -->
+		<!-- -------------- -->
+		<!-- <form use:enhance class="py-8" action="/contact/submit" method="POST"> -->
 		<div class="py-2">
 			<label class="block text-gray-700 font-bold py-2" for="name"> Name </label>
 			<input

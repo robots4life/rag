@@ -1,3 +1,4 @@
+// GET
 export const get = async ({ url }) => {
 	console.log('GET request received');
 	//
@@ -23,6 +24,7 @@ export const get = async ({ url }) => {
 	};
 };
 
+// POST
 export const post = async ({ request }) => {
 	console.log('POST request received');
 	//
@@ -53,6 +55,7 @@ export const post = async ({ request }) => {
 	};
 };
 
+// PUT
 // override method - <form class="py-8" action="/contact/submit?_method=PUT" method="POST">
 export const put = async ({ request }) => {
 	console.log('PUT request received');
@@ -84,6 +87,7 @@ export const put = async ({ request }) => {
 	};
 };
 
+// DELETE
 // override method - <form class="py-8" action="/contact/submit?_method=DELETE" method="POST">
 export const del = async ({ request }) => {
 	console.log('DELETE request received');

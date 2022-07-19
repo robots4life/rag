@@ -30,9 +30,3 @@ export const get = async () => {
 		process.exit(1);
 	}
 };
-
-export const post = async () => {
-	return {
-		status: 200
-	};
-};
