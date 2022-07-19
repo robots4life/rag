@@ -1,3 +1,6 @@
+import { invalidate } from '$app/navigation';
+
+// export const enhance = (form, { result } = {}) => {
 export const enhance = (form) => {
 	async function handleSubmit(event) {
 		//
@@ -17,6 +20,12 @@ export const enhance = (form) => {
 		if (!response.ok) {
 			console.error(await response.text());
 		}
+
+		const url = new URL(form.action);
+		console.log(url);
+		url.search = '';
+		url.hash = '';
+		invalidate(url.href);
 	}
 
 	form.addEventListener('submit', handleSubmit);
