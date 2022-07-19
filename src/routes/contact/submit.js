@@ -4,6 +4,7 @@ export const get = async ({ url }) => {
 	console.log(url.searchParams.get('message_name'));
 	console.log(url.searchParams.get('message_text'));
 
+	// show the data as JSON on the /contact/submit page
 	// return {
 	// 	status: 200,
 	// 	body: {
