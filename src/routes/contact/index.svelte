@@ -11,12 +11,12 @@
 <hr />
 
 <div class="w-full text-2xl text-center py-8">
-	<form class="py-8">
+	<form class="py-8" action="/contact/submit">
 		<div class="py-2">
-			<label class="block text-gray-700 font-bold py-2" for="message_name"> Name </label>
+			<label class="block text-gray-700 font-bold py-2" for="name"> Name </label>
 			<input
 				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
-				id="message_name"
+				id="name"
 				name="message_name"
 				type="text"
 				placeholder="Your Name"
@@ -24,10 +24,10 @@
 			/>
 		</div>
 		<div class="py-2">
-			<label class="block text-gray-700 font-bold py-2" for="message_text"> Message </label>
+			<label class="block text-gray-700 font-bold py-2" for="text"> Message </label>
 			<input
 				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
-				id="message_text"
+				id="text"
 				name="message_text"
 				type="text"
 				placeholder="Your Message"
