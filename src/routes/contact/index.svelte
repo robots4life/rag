@@ -27,7 +27,7 @@
 			<label class="block text-gray-700 font-bold py-2" for="message_text"> Message </label>
 			<input
 				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
-				id="message_name"
+				id="message_text"
 				name="message_text"
 				type="text"
 				placeholder="Your Message"
