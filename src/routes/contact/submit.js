@@ -37,10 +37,18 @@ export const post = async ({ request }) => {
 	console.log(messageText);
 
 	// submit the native form data and return to the from page
+	// return {
+	// 	status: 303,
+	// 	headers: {
+	// 		location: '/contact'
+	// 	}
+	// };
+
 	return {
-		status: 303,
-		headers: {
-			location: '/contact'
+		status: 200,
+		body: {
+			name: form.has('message_name') ? form.get('message_name').toString() : '',
+			message: form.has('message_text') ? form.get('message_text').toString() : ''
 		}
 	};
 };
