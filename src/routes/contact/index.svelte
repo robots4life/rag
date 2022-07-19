@@ -1,7 +1,8 @@
 <script>
 	export let messages;
 
-	let messageData = 'Lorem ipsum dolor sit amet.';
+	let messageName = 'Mary';
+	let messageText = 'Lorem ipsum dolor sit amet.';
 </script>
 
 <!-- {JSON.stringify(messages, null, 2)} -->
@@ -37,7 +38,7 @@
 <hr /> -->
 
 <div class="w-full text-2xl text-center py-8">
-	<form class="bg-white shadow-md rounded py-8">
+	<form class="py-8">
 		<div class="py-2">
 			<label class="block text-gray-700 font-bold py-2" for="name"> Name </label>
 			<input
@@ -45,7 +46,7 @@
 				id="name"
 				type="text"
 				placeholder="Your Name"
-				value="Mary"
+				bind:value="{messageName}"
 			/>
 		</div>
 		<div class="py-2">
@@ -55,7 +56,7 @@
 				id="message"
 				type="text"
 				placeholder="Your Message"
-				value="Flower Power :)"
+				bind:value="{messageText}"
 			/>
 		</div>
 		<div class="flex justify-center py-2">
