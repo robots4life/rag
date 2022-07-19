@@ -20,10 +20,6 @@ export const get = async ({ url }) => {
 		headers: {
 			location: '/contact'
 		}
-		// body: {
-		// 	message_name: url.searchParams.get('message_name'),
-		// 	message_text: url.searchParams.get('message_text')
-		// }
 	};
 };
 
@@ -32,7 +28,13 @@ export const post = async ({ request }) => {
 	//
 	// get formData
 	const form = await request.formData();
-	console.log(form);
+
+	// https://youtu.be/nmX-utfgeK4?t=403 !!!
+	const messageName = form.has('message_name') ? form.get('message_name').toString() : '';
+	console.log(messageName);
+
+	const messageText = form.has('message_text') ? form.get('message_text').toString() : '';
+	console.log(messageText);
 
 	// submit the native form data and return to the from page
 	return {
