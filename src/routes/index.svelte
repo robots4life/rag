@@ -12,12 +12,14 @@
 <hr />
 <h2 class="text-6xl text-center py-4">Description of Music</h2>
 <hr />
-<div class="cta text-4xl flex py-4 justify-between list-none">
-	<li>
-		<a href="/music">Listen to our Music</a>
-	</li>
-	<li>
-		<a href="/band">Check out our Band</a>
-	</li>
+<div class="cta text-4xl py-4 list-none">
+	<ul class="flex py-4 justify-between">
+		<li>
+			<a href="/music">Listen to our Music</a>
+		</li>
+		<li>
+			<a href="/band">Check out our Band</a>
+		</li>
+	</ul>
 </div>
 <hr />

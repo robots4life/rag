@@ -21,6 +21,7 @@
 
 <main class="container border min-h-screen flex flex-col">
 	<Nav />
+	<hr />
 	<PageTransition url="{url}">
 		<!-- Everything inside this transition component will be animated! -->
 		<!-- In this example, that encompasses all the page contents besides the navbar. -->

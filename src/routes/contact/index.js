@@ -30,12 +30,3 @@ export async function get() {
 		process.exit(1);
 	}
 }
-
-// https://kit.svelte.dev/docs/routing#endpoints-body-parsing
-
-export async function post({ request }) {
-	const data = await request.json(); // json text formData
-	console.log(data);
-
-	return { status: 200 };
-}

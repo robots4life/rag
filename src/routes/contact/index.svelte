@@ -1,41 +1,70 @@
 <script>
 	export let messages;
 
-	let messageData =
-		'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nulla mollitia dignissimos.';
-
-	async function handleSubmit() {
-		let payload = {
-			messageData
-		};
-		let payloadJSON = JSON.stringify(payload);
-		console.log(payloadJSON);
-		try {
-			const response = await fetch('/contact', {
-				method: 'POST',
-				headers: { accept: 'application/json' },
-				body: payloadJSON
-			});
-			console.log('Message sent..');
-		} catch (error) {
-			console.log(error);
-		}
-	}
+	let messageData = 'Lorem ipsum dolor sit amet.';
 </script>
-
-<h1>Contact Us Now</h1>
 
 <!-- {JSON.stringify(messages, null, 2)} -->
 
-{#each messages as message, index}
-	<p>{index + 1}</p>
-	<p>{message.id}</p>
-	<p>{message.text}</p>
-	<p>{message.submitDateTimeUnix}</p>
-	<hr />
-{/each}
+<h1 class="text-8xl text-center my-8">Contact Us Now</h1>
+<hr />
 
-<form on:submit|preventDefault="{handleSubmit}" action="/contact" method="post">
-	<input type="text" aria-label="Enter your text" bind:value="{messageData}" name="message" />
-	<button type="submit">Submit</button>
-</form>
+{#if messages}
+	<div class="w-full text-2xl text-center py-8">
+		<h2 class="text-6xl">Messages</h2>
+		{#each messages as message, index}
+			<div class="text-2xl py-8">
+				<p class="border">{index + 1}</p>
+				<div class="flex flex-row py-2">
+					<p class="basis-1/2 border">ID :</p>
+					<p class="basis-1/2 border">{message.id}</p>
+				</div>
+				<div class="flex flex-row py-2">
+					<p class="basis-1/2 border">Text :</p>
+					<p class="basis-1/2 border">{message.text}</p>
+				</div>
+				<div class="flex flex-row py-2">
+					<p class="basis-1/2 border">DateTime :</p>
+					<p class="basis-1/2 border">{message.submitDateTimeUnix}</p>
+				</div>
+				<hr />
+			</div>
+		{/each}
+	</div>
+{/if}
+
+<h1 class="text-8xl text-center my-8">Send Your Messge</h1>
+<hr />
+
+<div class="w-full text-2xl text-center py-8">
+	<form class="bg-white shadow-md rounded py-8">
+		<div class="py-2">
+			<label class="block text-gray-700 font-bold py-2" for="name"> Name </label>
+			<input
+				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
+				id="name"
+				type="text"
+				placeholder="Your Name"
+				value="Mary"
+			/>
+		</div>
+		<div class="py-2">
+			<label class="block text-gray-700 font-bold py-2" for="message"> Message </label>
+			<input
+				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
+				id="message"
+				type="text"
+				placeholder="Your Message"
+				value="Flower Power :)"
+			/>
+		</div>
+		<div class="flex justify-center py-2">
+			<button
+				class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded focus:outline-none focus:shadow-outline py-4 px-8"
+				type="submit"
+			>
+				Submit Your Message
+			</button>
+		</div>
+	</form>
+</div>
