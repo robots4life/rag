@@ -1,4 +1,4 @@
-import { invalidate } from '$app/navigation';
+// import { invalidate } from '$app/navigation';
 
 // export const enhance = (form, { result } = {}) => {
 export const enhance = (form) => {
@@ -23,9 +23,9 @@ export const enhance = (form) => {
 
 		const url = new URL(form.action);
 		console.log(url);
-		url.search = '';
-		url.hash = '';
-		invalidate(url.href);
+		// url.search = '';
+		// url.hash = '';
+		// invalidate(url.href);
 	}
 
 	form.addEventListener('submit', handleSubmit);
