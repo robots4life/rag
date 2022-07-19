@@ -10,7 +10,7 @@
 <h1 class="text-8xl text-center my-8">Send Your Messge</h1>
 <hr />
 
-<div class="w-full text-2xl text-center py-8" action="/contact" method="get">
+<div class="w-full text-2xl text-center py-8">
 	<form class="py-8">
 		<div class="py-2">
 			<label class="block text-gray-700 font-bold py-2" for="message_name"> Name </label>
