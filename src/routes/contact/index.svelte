@@ -1,6 +1,11 @@
 <script>
 	import { enhance } from '$root/lib/form';
 	export let messages;
+	console.log(messages);
+
+	// const submitDateTimeJson = messages.map((element) => {
+	// 	console.log(element.submitDateTimeJson.ms);
+	// });
 
 	let messageName = 'Mary';
 	let messageText = 'Lorem ipsum dolor sit amet.';
@@ -201,18 +206,51 @@
 		<h2 class="text-6xl">Messages</h2>
 		{#each messages as message, index}
 			<div class="text-2xl py-8">
-				<p class="border">{index + 1}</p>
-				<div class="flex flex-row py-2">
-					<p class="basis-1/2 border">ID :</p>
+				<p class="text-4xl border">{index + 1}</p>
+				<div class="flex py-2">
+					<p class="font-bold basis-1/2 border">ID</p>
 					<p class="basis-1/2 border">{message.id}</p>
 				</div>
-				<div class="flex flex-row py-2">
-					<p class="basis-1/2 border">Text :</p>
+				<div class="flex py-2">
+					<p class="font-bold basis-1/2 border">Name</p>
+					<p class="basis-1/2 border">{message.name}</p>
+				</div>
+				<div class="flex py-2">
+					<p class="font-bold basis-1/2 border">Text</p>
 					<p class="basis-1/2 border">{message.text}</p>
 				</div>
-				<div class="flex flex-row py-2">
-					<p class="basis-1/2 border">DateTime :</p>
-					<p class="basis-1/2 border">{message.submitDateTimeUnix}</p>
+				<div class="flex flex-col border py-2">
+					<p class="font-bold">Date & Time</p>
+					<div class="flex items-center py-2">
+						<p class="basis-1/2 border">MS</p>
+						<p class="basis-1/2 border">{message.submitDateTimeJson.ms}</p>
+					</div>
+					<div class="flex items-center py-2">
+						<p class="basis-1/2 border">ISO</p>
+						<p class="basis-1/2 border">{message.submitDateTimeJson.iso}</p>
+					</div>
+					<div class="flex items-center py-2">
+						<p class="basis-1/2 border">UTC</p>
+						<p class="basis-1/2 border">{message.submitDateTimeJson.utc}</p>
+					</div>
+					<div class="flex items-center py-2">
+						<p class="basis-1/2 border">DATE</p>
+						<p class="basis-1/2 border">{message.submitDateTimeJson.date}</p>
+					</div>
+					<div class="flex items-center py-2">
+						<p class="basis-1/2 border">JSON</p>
+						<p class="basis-1/2 border">{message.submitDateTimeJson.json}</p>
+					</div>
+					<div class="flex items-center py-2">
+						<p class="basis-1/2 border">TIME</p>
+						<p class="basis-1/2 border">{message.submitDateTimeJson.time}</p>
+					</div>
+					<div class="flex items-center py-2">
+						<p class="basis-1/2 border">STRING</p>
+						<p class="basis-1/2 border">
+							{message.submitDateTimeJson.string}
+						</p>
+					</div>
 				</div>
 				<hr />
 			</div>

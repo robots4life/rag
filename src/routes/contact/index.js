@@ -7,13 +7,14 @@ const GRAPH_CMS_MESSAGE_TOKEN = process.env['GRAPH_CMS_MESSAGE_TOKEN'];
 client.setHeader('authorization', GRAPH_CMS_MESSAGE_TOKEN);
 
 export const get = async () => {
+	console.log('GET request received');
 	const getMessages = gql`
 		query getMessages {
 			messages(first: 1000) {
 				id
 				name
 				text
-				submitDateTimeUnix
+				submitDateTimeJson
 			}
 		}
 	`;

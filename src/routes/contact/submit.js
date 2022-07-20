@@ -1,3 +1,8 @@
+import { client } from '$lib/graphql-client';
+import { gql } from 'graphql-request';
+
+const GRAPH_CMS_MESSAGE_TOKEN = process.env['GRAPH_CMS_MESSAGE_TOKEN'];
+
 // GET
 export const get = async ({ url }) => {
 	console.log('GET request received');
@@ -48,32 +53,85 @@ export const post = async ({ request }) => {
 		: '';
 	console.log(messageDateTime);
 
-	// const api = formData.has('api') ? formData.get('api').toString() : '';
-	// console.log(api);
+	if (messageDateTime) {
+		console.log('messageDateTime is an object');
 
-	// submit the native form data and return to the from page
+		// https://github.com/prisma-labs/graphql-request#incrementally-setting-headers
+		client.setHeader('authorization', GRAPH_CMS_MESSAGE_TOKEN);
+
+		// const playgroundVars = { name: 'Jane', text: 'Lorem !', submitDateTimeJson: { a: 'b' } };
+
+		const variables = {
+			name: messageName,
+			text: messageText,
+			submitDateTimeJson: messageDateTime
+		};
+		const createMessage = gql`
+			mutation createMessage($name: String!, $text: String!, $submitDateTimeJson: Json!) {
+				createMessage(
+					data: { name: $name, text: $text, submitDateTimeJson: $submitDateTimeJson }
+				) {
+					id
+					name
+					text
+					submitDateTimeJson
+				}
+			}
+		`;
+		const publishMessage = gql`
+			mutation publishMessage($id: ID!) {
+				publishMessage(where: { id: $id }, to: PUBLISHED) {
+					id
+				}
+			}
+		`;
+		// https://github.com/prisma-labs/graphql-request#error-handling
+		try {
+			const createdMessage = await client.request(createMessage, variables);
+			// console.log(JSON.stringify(createdMessage, undefined, 2));
+			try {
+				const messageID = { id: createdMessage.createMessage.id };
+				const publishedMessage = await client.request(publishMessage, messageID);
+				let returnedMessage = JSON.stringify(publishedMessage);
+				console.log(returnedMessage);
+				return {
+					status: 303,
+					headers: {
+						location: '/contact'
+					}
+				};
+			} catch (error) {
+				console.error(JSON.stringify(error, undefined, 2));
+				process.exit(1);
+			}
+		} catch (error) {
+			console.error(JSON.stringify(error, undefined, 2));
+			process.exit(1);
+		}
+	}
 
 	// return {
 	// 	status: 200
 	// };
 
-	// return {
-	// 	status: 303,
-	// 	headers: {
-	// 		location: '/contact'
-	// 	}
-	// };
-
+	// submit the native form data and return to the from page
 	return {
-		status: 200,
-		body: {
-			name: formData.has('message_name') ? formData.get('message_name').toString() : '',
-			message: formData.has('message_text') ? formData.get('message_text').toString() : '',
-			dateTime: formData.has('message_date_time')
-				? JSON.parse(formData.get('message_date_time'))
-				: ''
+		status: 303,
+		headers: {
+			location: '/contact'
 		}
 	};
+
+	// return {
+	// 	status: 200,
+	// 	body: {
+	// 		name: formData.has('message_name') ? formData.get('message_name').toString() : '',
+	// 		message: formData.has('message_text') ? formData.get('message_text').toString() : '',
+	// 		dateTime: formData.has('message_date_time')
+	// 			? JSON.parse(formData.get('message_date_time'))
+	// 			: ''
+	// 	}
+	// };
 };
 
 // PUT
