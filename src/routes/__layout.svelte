@@ -33,5 +33,8 @@
 <style>
 	:global(html) {
 		overflow-y: scroll;
+		background-color: slateblue;
+		color: white;
+		word-wrap: wrap;
 	}
 </style>
