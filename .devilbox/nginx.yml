@@ -60,6 +60,9 @@ vhost: |
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
+
+        # https://stackoverflow.com/questions/71367087/static-adapter-not-working-with-nginx-and-refreshing-pages
+        try_files $uri $uri/ /index.html;
       }
 
     __REDIRECT__
