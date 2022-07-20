@@ -38,8 +38,13 @@ export const post = async ({ request }) => {
 	const messageText = formData.has('message_text') ? formData.get('message_text').toString() : '';
 	console.log(messageText);
 
+	// const messageDateTime = formData.has('message_date_time')
+	// 	? formData.get('message_date_time').toString()
+	// 	: '';
+	// console.log(messageDateTime);
+
 	const messageDateTime = formData.has('message_date_time')
-		? formData.get('message_date_time').toString()
+		? JSON.parse(formData.get('message_date_time'))
 		: '';
 	console.log(messageDateTime);
 
@@ -48,9 +53,10 @@ export const post = async ({ request }) => {
 
 	// submit the native form data and return to the from page
 
-	return {
-		status: 200
-	};
+	// return {
+	// 	status: 200
+	// };
+
 	// return {
 	// 	status: 303,
 	// 	headers: {
@@ -58,13 +64,16 @@ export const post = async ({ request }) => {
 	// 	}
 	// };
 
-	// return {
-	// 	status: 200,
-	// 	body: {
-	// 		name: formData.has('message_name') ? formData.get('message_name').toString() : '',
-	// 		message: formData.has('message_text') ? formData.get('message_text').toString() : ''
-	// 	}
-	// };
+	return {
+		status: 200,
+		body: {
+			name: formData.has('message_name') ? formData.get('message_name').toString() : '',
+			message: formData.has('message_text') ? formData.get('message_text').toString() : '',
+			dateTime: formData.has('message_date_time')
+				? JSON.parse(formData.get('message_date_time'))
+				: ''
+		}
+	};
 };
 
 // PUT

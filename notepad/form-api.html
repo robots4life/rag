@@ -1,25 +1,32 @@
 <p>API</p>
 <div class="w-full text-2xl text-center py-8">
 	<!-- POST request form without ?_method=POST and without method="POST" defaults to the GET request -->
-	<!-- <form class="py-8" action="/contact/submit"> -->
+	<!-- <form id="local" class="py-8" action="/contact/submit"> -->
+	<!--  -->
 
 	<!-- POST request without ?_method=POST defaults to the POST request with method="POST"-->
 	<form id="api" class="py-8" action="/contact/submit" method="POST">
+		<!--  -->
+
 		<!-- PUT request with method parameter set to PUT with method="POST"-->
 		<!-- <form class="py-8" action="/contact/submit?_method=PUT" method="POST"> -->
+		<!--  -->
 
 		<!-- DELETE request with method parameter set to DELETE with method="POST"-->
 		<!-- <form class="py-8" action="/contact/submit?_method=DELETE" method="POST"> -->
+		<!--  -->
+		<!--  -->
 
 		<!-- -------------- -->
 		<!-- handleSubmit   -->
 		<!-- -------------- -->
 		<!-- <form
-		on:submit|preventDefault="{handleSubmitAPI}"
+		id="local"
+		on:submit|preventDefault="{handleSubmit}"
 		class="py-8"
 		action="/contact/submit"
 		method="POST"
-	> -->
+		> -->
 		<!-- -------------- -->
 		<!-- enhance action -->
 		<!-- -------------- -->
@@ -47,12 +54,12 @@
 			/>
 		</div>
 		<div class="py-2">
-			<label class="block text-gray-700 font-bold py-2" for="date_time">Date & Time</label>
+			<label class="block text-gray-700 font-bold py-2" for="number">Date & Time</label>
 			<input
 				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
-				id="date_time"
+				id="number"
 				name="message_date_time"
-				type="number"
+				type="text"
 				bind:value="{messageDateTime}"
 			/>
 		</div>
