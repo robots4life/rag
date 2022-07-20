@@ -23,6 +23,7 @@ export const get = async () => {
 		const messages = await client.request(getMessages);
 		// console.log(JSON.stringify(messages, undefined, 2));
 		// console.log(Date.now());
+		console.log('GET request end');
 		return {
 			status: 200,
 			body: messages

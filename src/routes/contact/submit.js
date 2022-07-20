@@ -20,6 +20,7 @@ export const get = async ({ url }) => {
 	// 	}
 	// };
 
+	console.log('GET request end');
 	// submit the native form data and return to the from page
 	return {
 		status: 303,
@@ -94,6 +95,7 @@ export const post = async ({ request }) => {
 				const publishedMessage = await client.request(publishMessage, messageID);
 				let returnedMessage = JSON.stringify(publishedMessage);
 				console.log(returnedMessage);
+				console.log('POST request end');
 				return {
 					status: 303,
 					headers: {
@@ -114,6 +116,7 @@ export const post = async ({ request }) => {
 	// 	status: 200
 	// };
 
+	console.log('POST request end');
 	// submit the native form data and return to the from page
 	return {
 		status: 303,
@@ -157,6 +160,7 @@ export const put = async ({ request }) => {
 	// 	}
 	// };
 
+	console.log('PUT request end');
 	return {
 		status: 200,
 		body: {
@@ -189,6 +193,7 @@ export const del = async ({ request }) => {
 	// 	}
 	// };
 
+	console.log('DELETE request end');
 	return {
 		status: 200,
 		body: {
