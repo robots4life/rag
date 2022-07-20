@@ -64,7 +64,12 @@ vhost: |
         # https://stackoverflow.com/questions/71367087/static-adapter-not-working-with-nginx-and-refreshing-pages
         // https://github.com/robots4life/devilskit/issues/1
         # try_files $uri $uri/ /index.html;
-      }
+
+        # https://stackoverflow.com/a/70434644
+        # does not work
+        #location @static {
+        #    try_files $uri /index.html =502;
+        # }
 
     __REDIRECT__
     __SSL__
