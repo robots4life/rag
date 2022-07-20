@@ -1,7 +1,7 @@
 <script>
 	import { enhance } from '$root/lib/form';
 	export let messages;
-	console.log(messages);
+	// console.log(messages);
 
 	// const submitDateTimeJson = messages.map((element) => {
 	// 	console.log(element.submitDateTimeJson.ms);
