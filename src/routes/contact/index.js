@@ -11,6 +11,7 @@ export const get = async () => {
 		query getMessages {
 			messages(first: 1000) {
 				id
+				name
 				text
 				submitDateTimeUnix
 			}

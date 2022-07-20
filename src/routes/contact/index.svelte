@@ -4,6 +4,7 @@
 
 	let messageName = 'Mary';
 	let messageText = 'Lorem ipsum dolor sit amet.';
+	let messageDateTime = Date.now();
 
 	export const handleSubmit = async (event) => {
 		console.log(event);
@@ -23,6 +24,12 @@
 			console.log(error);
 		}
 	};
+
+	// export const handleSubmitAPI = async (event) => {
+	// 	console.log(event);
+	// 	const form = event.target;
+	// 	console.log(form);
+	// };
 </script>
 
 <!-- {JSON.stringify(messages, null, 2)} -->
@@ -32,26 +39,32 @@
 
 <div class="w-full text-2xl text-center py-8">
 	<!-- POST request form without ?_method=POST and without method="POST" defaults to the GET request -->
-	<!-- <form class="py-8" action="/contact/submit"> -->
+	<form class="py-8" action="/contact/submit">
+		<!--  -->
 
-	<!-- POST request without ?_method=POST defaults to the POST request with method="POST"-->
-	<!-- <form class="py-8" action="/contact/submit" method="POST"> -->
+		<!-- POST request without ?_method=POST defaults to the POST request with method="POST"-->
+		<!-- <form id="local" class="py-8" action="/contact/submit" method="POST"> -->
+		<!--  -->
 
-	<!-- PUT request with method parameter set to PUT with method="POST"-->
-	<!-- <form class="py-8" action="/contact/submit?_method=PUT" method="POST"> -->
+		<!-- PUT request with method parameter set to PUT with method="POST"-->
+		<!-- <form class="py-8" action="/contact/submit?_method=PUT" method="POST"> -->
+		<!--  -->
 
-	<!-- DELETE request with method parameter set to DELETE with method="POST"-->
-	<!-- <form class="py-8" action="/contact/submit?_method=DELETE" method="POST"> -->
+		<!-- DELETE request with method parameter set to DELETE with method="POST"-->
+		<!-- <form class="py-8" action="/contact/submit?_method=DELETE" method="POST"> -->
+		<!--  -->
+		<!--  -->
 
-	<!-- -------------- -->
-	<!-- handleSubmit   -->
-	<!-- -------------- -->
-	<form
+		<!-- -------------- -->
+		<!-- handleSubmit   -->
+		<!-- -------------- -->
+		<!-- <form
+		id="local"
 		on:submit|preventDefault="{handleSubmit}"
 		class="py-8"
 		action="/contact/submit"
 		method="POST"
-	>
+		> -->
 		<!-- -------------- -->
 		<!-- enhance action -->
 		<!-- -------------- -->
@@ -82,6 +95,7 @@
 			<button
 				class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded focus:outline-none focus:shadow-outline py-4 px-8"
 				type="submit"
+				form="local"
 			>
 				Submit Your Message
 			</button>
