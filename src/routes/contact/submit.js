@@ -3,8 +3,11 @@ import { gql } from 'graphql-request';
 
 const GRAPH_CMS_MESSAGE_TOKEN = process.env['GRAPH_CMS_MESSAGE_TOKEN'];
 
+// on update -
+// 1. Endpoint method "get" has changed to "GET". See https://github.com/sveltejs/kit/discussions/5359
+
 // GET
-export const get = async ({ url }) => {
+export const GET = async ({ url }) => {
 	console.log('GET request received');
 	//
 	// get search parameters from a native form method get request
@@ -31,7 +34,7 @@ export const get = async ({ url }) => {
 };
 
 // POST
-export const post = async ({ request }) => {
+export const POST = async ({ request }) => {
 	console.log('POST request received');
 	//
 	// get formData
@@ -139,7 +142,7 @@ export const post = async ({ request }) => {
 
 // PUT
 // override method - <form class="py-8" action="/contact/submit?_method=PUT" method="POST">
-export const put = async ({ request }) => {
+export const PUT = async ({ request }) => {
 	console.log('PUT request received');
 	//
 	// get formData
@@ -172,7 +175,7 @@ export const put = async ({ request }) => {
 
 // DELETE
 // override method - <form class="py-8" action="/contact/submit?_method=DELETE" method="POST">
-export const del = async ({ request }) => {
+export const DEL = async ({ request }) => {
 	console.log('DELETE request received');
 	//
 	// get formData

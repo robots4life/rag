@@ -3,8 +3,11 @@ import { gql } from 'graphql-request';
 
 const GRAPH_CMS_MESSAGE_TOKEN = process.env['GRAPH_CMS_MESSAGE_TOKEN'];
 
+// on update -
+// 1. Endpoint method "get" has changed to "GET". See https://github.com/sveltejs/kit/discussions/5359
+
 // GET
-export const get = async () => {
+export const GET = async () => {
 	console.log('GET request received');
 
 	// https://github.com/prisma-labs/graphql-request#incrementally-setting-headers

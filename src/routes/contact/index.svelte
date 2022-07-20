@@ -52,8 +52,8 @@
 <!-- {JSON.stringify(messages, null, 2)} -->
 
 <h1 class="text-8xl text-center my-8">Send Your Messge</h1>
-<hr />
 
+<hr />
 <p>Local</p>
 <div class="w-full text-2xl text-center py-8">
 	<!-- POST request form without ?_method=POST and without method="POST" defaults to the GET request -->
@@ -121,6 +121,7 @@
 	</form>
 </div>
 
+<hr />
 <p>API</p>
 <div class="w-full text-2xl text-center py-8">
 	<!-- POST request form without ?_method=POST and without method="POST" defaults to the GET request -->

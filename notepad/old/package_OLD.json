@@ -2,18 +2,18 @@
 	"name": "rag",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "env-cmd vite dev",
-		"build": "env-cmd vite build && ./copy.sh",
+		"dev": "env-cmd svelte-kit dev",
+		"build": "env-cmd svelte-kit build && ./copy.sh",
 		"package": "svelte-kit package",
-		"preview": "vite preview",
+		"preview": "svelte-kit preview",
 		"prepare": "svelte-kit sync",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-node": "^1.0.0-next.82",
-		"@sveltejs/adapter-static": "^1.0.0-next.38",
+		"@sveltejs/adapter-node": "^1.0.0-next.78",
+		"@sveltejs/adapter-static": "^1.0.0-next.34",
 		"@sveltejs/kit": "next",
 		"autoprefixer": "^10.4.7",
 		"env-cmd": "^10.1.0",
@@ -26,8 +26,7 @@
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
 		"svelte": "^3.44.0",
-		"tailwindcss": "^3.1.6",
-		"vite": "^3.0.0"
+		"tailwindcss": "^3.1.4"
 	},
 	"type": "module"
 }
