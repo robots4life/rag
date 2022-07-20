@@ -3,11 +3,13 @@ import { gql } from 'graphql-request';
 
 const GRAPH_CMS_MESSAGE_TOKEN = process.env['GRAPH_CMS_MESSAGE_TOKEN'];
 
-// https://github.com/prisma-labs/graphql-request#incrementally-setting-headers
-client.setHeader('authorization', GRAPH_CMS_MESSAGE_TOKEN);
-
+// GET
 export const get = async () => {
 	console.log('GET request received');
+
+	// https://github.com/prisma-labs/graphql-request#incrementally-setting-headers
+	client.setHeader('authorization', GRAPH_CMS_MESSAGE_TOKEN);
+
 	const getMessages = gql`
 		query getMessages {
 			messages(first: 1000) {
