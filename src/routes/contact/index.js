@@ -1,7 +1,7 @@
 import { client } from '$lib/graphql-client';
 import { gql } from 'graphql-request';
 
-const GRAPH_CMS_MESSAGE_TOKEN = process.env['GRAPH_CMS_MESSAGE_TOKEN'];
+const MESSAGE_TOKEN = process.env['MESSAGE_TOKEN'];
 
 // on update -
 // 1. Endpoint method "get" has changed to "GET". See https://github.com/sveltejs/kit/discussions/5359
@@ -11,7 +11,7 @@ export const GET = async () => {
 	console.log('GET request received');
 
 	// https://github.com/prisma-labs/graphql-request#incrementally-setting-headers
-	client.setHeader('authorization', GRAPH_CMS_MESSAGE_TOKEN);
+	client.setHeader('authorization', MESSAGE_TOKEN);
 
 	const getMessages = gql`
 		query getMessages {
