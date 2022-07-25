@@ -22,13 +22,31 @@ export const GET = async () => {
 				startDateTime
 				endDateTime
 				entryPrice
-				googleMapLink {
+				googleMapCoordinates {
 					latitude
 					longitude
 				}
+				googleMapLink
 				bandMembers {
 					id
 					name
+					slug
+					picture {
+						id
+						url(
+							transformation: {
+								image: { resize: { width: 400 } }
+								document: { output: { format: webp } }
+							}
+						)
+						width
+						height
+						mimeType
+						fileName
+					}
+					nickname
+					description
+					instrument
 				}
 			}
 		}
