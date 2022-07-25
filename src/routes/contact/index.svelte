@@ -3,6 +3,8 @@
 	export let messages;
 	// console.log(messages);
 
+	import { onMount } from 'svelte';
+
 	// const submitDateTimeJson = messages.map((element) => {
 	// 	console.log(element.submitDateTimeJson.ms);
 	// });
@@ -10,7 +12,7 @@
 	let messageName = 'Mary';
 	let messageText = 'Lorem ipsum dolor sit amet.';
 	let date = new Date();
-	let messageDateTimeObject = {
+	$: messageDateTimeObject = {
 		string: date.toString(),
 		utc: date.toUTCString(),
 		date: date.toLocaleDateString(),
@@ -19,9 +21,17 @@
 		iso: date.toISOString(),
 		ms: date.getMilliseconds()
 	};
+
+	onMount(() => {
+		const interval = setInterval(() => {
+			date = new Date();
+			console.log(messageDateTimeObject);
+		}, 1000);
+	});
+
 	// console.log(messageDateTimeObject);
 	// console.log(JSON.stringify(messageDateTimeObject));
-	let messageDateTime = JSON.stringify(messageDateTimeObject);
+	// let messageDateTime = JSON.stringify(messageDateTimeObject);
 
 	export const handleSubmit = async (event) => {
 		console.log(event);
@@ -184,7 +194,7 @@
 				id="number-api"
 				name="message_date_time"
 				type="text"
-				bind:value="{messageDateTime}"
+				bind:value="{messageDateTimeObject}"
 			/>
 		</div>
 		<div class="flex justify-center py-2">
