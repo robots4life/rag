@@ -25,7 +25,7 @@
 	onMount(() => {
 		const interval = setInterval(() => {
 			date = new Date();
-			console.log(messageDateTimeObject);
+			// console.log(messageDateTimeObject);
 		}, 1000);
 	});
 
