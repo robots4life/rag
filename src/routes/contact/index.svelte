@@ -156,10 +156,10 @@
 		<!-- -------------- -->
 		<!-- <form use:enhance class="py-8" action="/contact/submit" method="POST"> -->
 		<div class="py-2">
-			<label class="block text-gray-700 font-bold py-2" for="name">Name</label>
+			<label class="block text-gray-700 font-bold py-2" for="name-api">Name</label>
 			<input
 				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
-				id="name"
+				id="name-api"
 				name="message_name"
 				type="text"
 				placeholder="Your Name"
@@ -167,10 +167,10 @@
 			/>
 		</div>
 		<div class="py-2">
-			<label class="block text-gray-700 font-bold py-2" for="text">Message</label>
+			<label class="block text-gray-700 font-bold py-2" for="text-api">Message</label>
 			<input
 				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
-				id="text"
+				id="text-api"
 				name="message_text"
 				type="text"
 				placeholder="Your Message"
@@ -178,10 +178,10 @@
 			/>
 		</div>
 		<div class="py-2">
-			<label class="block text-gray-700 font-bold py-2" for="number">Date & Time</label>
+			<label class="block text-gray-700 font-bold py-2" for="number-api">Date & Time</label>
 			<input
 				class="shadow appearance-none w-full text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-center py-2"
-				id="number"
+				id="number-api"
 				name="message_date_time"
 				type="text"
 				bind:value="{messageDateTime}"
