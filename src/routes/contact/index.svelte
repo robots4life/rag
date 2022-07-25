@@ -22,6 +22,7 @@
 		ms: date.getMilliseconds()
 	};
 
+	// https://medium.com/programming-essentials/how-to-create-a-clock-component-with-svelte-2b62edf1c328
 	onMount(() => {
 		const interval = setInterval(() => {
 			date = new Date();
