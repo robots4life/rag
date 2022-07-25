@@ -70,25 +70,7 @@ export const POST = async ({ request }) => {
 			text: messageText,
 			submitDateTimeJson: messageDateTime
 		};
-		const createMessage = gql`
-			mutation createMessage($name: String!, $text: String!, $submitDateTimeJson: Json!) {
-				createMessage(
-					data: { name: $name, text: $text, submitDateTimeJson: $submitDateTimeJson }
-				) {
-					id
-					name
-					text
-					submitDateTimeJson
-				}
-			}
-		`;
-		const publishMessage = gql`
-			mutation publishMessage($id: ID!) {
-				publishMessage(where: { id: $id }, to: PUBLISHED) {
-					id
-				}
-			}
-		`;
+
 		// https://github.com/prisma-labs/graphql-request#error-handling
 		try {
 			const createdMessage = await client.request(createMessage, variables);
@@ -114,6 +96,74 @@ export const POST = async ({ request }) => {
 			process.exit(1);
 		}
 	}
+
+	// const something = async () => {
+
+	// }
+
+	// something.onEvent(async function doSomethingElse(){
+	// 	console.log('Hello something else');
+	// 	// error => 
+	// })
+	async function createMessage(variables) {
+		const createMessage = gql`
+			mutation createMessage($name: String!, $text: String!, $submitDateTimeJson: Json!) {
+				createMessage(
+					data: { name: $name, text: $text, submitDateTimeJson: $submitDateTimeJson }
+				) {
+					id
+					name
+					text
+					submitDateTimeJson
+				}
+			}
+		`;
+		const createdMessage = await client.request(createMessage, variables);
+		return createdMessage.createMessage.id;
+	}
+
+	async function publishMessage(messageId) {
+		const publishMessage = gql`
+			mutation publishMessage($id: ID!) {
+				publishMessage(where: { id: $id }, to: PUBLISHED) {
+					id
+				}
+			}
+		`;
+		const messageID = { id: messageId };
+		const publishedMessage = await client.request(publishMessage, messageID);
+		let returnedMessage = JSON.stringify(publishedMessage);
+		console.log(returnedMessage);
+		console.log('POST request end');
+	}
+
+	try {
+		const messageId = await createMessage(variables);
+		await publishMessage(messageId);
+	} catch (error) {
+		console.error(JSON.stringify(error, undefined, 2));
+		process.exit(1);
+	}try {
+		const messageId = await createMessage(variables);
+		await publishMessage(messageId);
+	} catch (error) {
+		console.error(JSON.stringify(error, undefined, 2));
+		process.exit(1);
+	}
+
+	return {
+		status: 303,
+		headers: {
+			location: '/contact'
+		}
+	};
+
+	return {
+		status: 303,
+		headers: {
+			location: '/contact'
+		}
+	};
 
 	// return {
 	// 	status: 200
@@ -192,7 +242,20 @@ export const DEL = async ({ request }) => {
 	// return {
 	// 	status: 303,
 	// 	headers: {
-	// 		location: '/contact'
+	// 		location: '/contact'try {
+		const messageId = await createMessage(variables);
+		await publishMessage(messageId);
+	} catch (error) {
+		console.error(JSON.stringify(error, undefined, 2));
+		process.exit(1);
+	}
+
+	return {
+		status: 303,
+		headers: {
+			location: '/contact'
+		}
+	};
 	// 	}
 	// };
 

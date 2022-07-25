@@ -51,7 +51,7 @@
 
 <!-- {JSON.stringify(messages, null, 2)} -->
 
-<h1 class="text-8xl text-center my-8">Send Your Messge</h1>
+<h1 class="text-8xl text-center my-8">Send Your Message</h1>
 
 <hr />
 <p>Local</p>
