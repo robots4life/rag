@@ -31,7 +31,7 @@
 
 	// console.log(messageDateTimeObject);
 	// console.log(JSON.stringify(messageDateTimeObject));
-	// let messageDateTime = JSON.stringify(messageDateTimeObject);
+	$: messageDateTime = JSON.stringify(messageDateTimeObject);
 
 	export const handleSubmit = async (event) => {
 		console.log(event);
@@ -194,7 +194,7 @@
 				id="number-api"
 				name="message_date_time"
 				type="text"
-				bind:value="{messageDateTimeObject}"
+				bind:value="{messageDateTime}"
 			/>
 		</div>
 		<div class="flex justify-center py-2">
