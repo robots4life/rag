@@ -1,17 +1,17 @@
 <nav class="flex py-4 justify-between list-none text-4xl">
 	<li>
-		<a href="/">Home</a>
+		<a sveltekit:prefetch href="/">Home</a>
 	</li>
 	<li>
-		<a href="/music">Music</a>
+		<a sveltekit:prefetch href="/music">Music</a>
 	</li>
 	<li>
-		<a href="/band">Band</a>
+		<a sveltekit:prefetch href="/band">Band</a>
 	</li>
 	<li>
-		<a href="/concerts">Concerts</a>
+		<a sveltekit:prefetch href="/concerts">Concerts</a>
 	</li>
 	<li>
-		<a href="/gallery">Gallery</a>
+		<a sveltekit:prefetch href="/gallery">Gallery</a>
 	</li>
 </nav>

@@ -18,6 +18,16 @@ export const GET = async () => {
 				slug
 				picture {
 					id
+					url(
+						transformation: {
+							image: { resize: { width: 400 } }
+							document: { output: { format: webp } }
+						}
+					)
+					width
+					height
+					mimeType
+					fileName
 				}
 				nickname
 				description
