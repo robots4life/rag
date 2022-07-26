@@ -10,7 +10,33 @@ export const GET = async () => {
 	// https://github.com/prisma-labs/graphql-request#incrementally-setting-headers
 	client.setHeader('authorization', CONCERT_BAND_MEMBER_TOKEN);
 
-	const getBandMembers = gql`
+	// const getBandMembers = gql`
+	// 	query getBandMembers {
+	// 		bandMembers {
+	// 			id
+	// 			name
+	// 			slug
+	// 			picture {
+	// 				id
+	// 				url(
+	// 					transformation: {
+	// 						image: { resize: { width: 400 } }
+	// 						document: { output: { format: webp } }
+	// 					}
+	// 				)
+	// 				width
+	// 				height
+	// 				mimeType
+	// 				fileName
+	// 			}
+	// 			nickname
+	// 			description
+	// 			instrument
+	// 		}
+	// 	}
+	// `;
+
+	const getBandMembersWithResponsivePicture = gql`
 		query getBandMembers {
 			bandMembers {
 				id
@@ -18,16 +44,11 @@ export const GET = async () => {
 				slug
 				picture {
 					id
-					url(
-						transformation: {
-							image: { resize: { width: 400 } }
-							document: { output: { format: webp } }
-						}
-					)
 					width
 					height
 					mimeType
 					fileName
+					url
 				}
 				nickname
 				description
@@ -37,7 +58,7 @@ export const GET = async () => {
 	`;
 	// https://github.com/prisma-labs/graphql-request#error-handling
 	try {
-		const bandMembers = await client.request(getBandMembers);
+		const bandMembers = await client.request(getBandMembersWithResponsivePicture);
 		// console.log(JSON.stringify(concerts, undefined, 2));
 		// console.log(Date.now());
 		console.log('GET request end');

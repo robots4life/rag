@@ -1,6 +1,8 @@
 <script>
 	export let bandMembers;
+	export let classes;
 	import Image from '$root/components/Image.svelte';
+	import Picture from '$root/components/Picture.svelte';
 </script>
 
 <h1>Band Members</h1>
@@ -39,8 +41,20 @@
 			</div>
 			<div class="flex flex-col border py-2">
 				<p class="font-bold">Picture</p>
-				<div class="flex justify-center border py-2">
+				<div class="flex flex-col items-center border py-2">
+					<!-- {member.picture} -->
+					<!-- {JSON.stringify(member.picture, null, 2)} -->
 					<Image url="{member.picture.url}" />
+					<!-- <Picture data="{member.picture}" class="basis-1/2 border" /> -->
+				</div>
+			</div>
+			<div class="flex flex-col border py-2">
+				<p class="font-bold">Picture</p>
+				<div class="flex flex-col items-center border py-2">
+					<!-- {member.picture} -->
+					<!-- {JSON.stringify(member.picture, null, 2)} -->
+					<p class="basis-1/2 border">{JSON.stringify(member.picture, null, 2)}</p>
+					<Picture data="{member.picture}" classes="{'border-8 border-red-800'}" />
 				</div>
 			</div>
 		{/each}
