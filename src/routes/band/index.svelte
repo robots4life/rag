@@ -36,17 +36,11 @@
 					{/if}
 				</div>
 			</div>
-
-			<!-- <div class="flex py-2">
-				<p class="font-bold basis-1/2 border">Instrument</p>
-				<p class="basis-1/2 border">{member.instrument[0]}</p>
-				{#if member.instrument[1]}
-					<p class="basis-1/2 border">{member.instrument[1]}</p>
-				{/if}
-			</div> -->
-			<div class="flex py-2">
-				<p class="font-bold basis-1/2 border">Picture</p>
-				<img class="basis-1/2 border" src="{member.picture.url}" alt="" />
+			<div class="flex flex-col border-4 border-green-600 py-2">
+				<p class="font-bold">Picture</p>
+				<div class="flex justify-center border-4 border-orange-600 py-2">
+					<img class="basis-1/2 border" src="{member.picture.url}" alt="" />
+				</div>
 			</div>
 		{/each}
 	</div>
