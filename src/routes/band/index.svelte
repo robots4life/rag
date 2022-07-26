@@ -27,17 +27,35 @@
 				<p class="font-bold basis-1/2 border">Description</p>
 				<p class="basis-1/2 border">{member.description}</p>
 			</div>
-			<div class="flex py-2">
+			<div class="flex flex-col border-4 border-green-600 py-2">
+				<p class="font-bold">Instrument</p>
+				<div class="flex justify-center border-4 border-orange-600 py-2">
+					<p class="basis-2/5 border">{member.instrument[0]}</p>
+					{#if member.instrument[1]}
+						<p class="basis-2/5 border">{member.instrument[1]}</p>
+					{/if}
+				</div>
+			</div>
+
+			<!-- <div class="flex py-2">
 				<p class="font-bold basis-1/2 border">Instrument</p>
 				<p class="basis-1/2 border">{member.instrument[0]}</p>
 				{#if member.instrument[1]}
 					<p class="basis-1/2 border">{member.instrument[1]}</p>
 				{/if}
-			</div>
+			</div> -->
 			<div class="flex py-2">
-				<p class="basis-1/2 border">Picture</p>
+				<p class="font-bold basis-1/2 border">Picture</p>
 				<img class="basis-1/2 border" src="{member.picture.url}" alt="" />
 			</div>
 		{/each}
 	</div>
 {/if}
+
+<style>
+	img {
+		max-width: 400px;
+		width: 100%;
+		height: auto;
+	}
+</style>
