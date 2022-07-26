@@ -1,10 +1,11 @@
 <script>
 	export let bandMembers;
+	import Image from '$root/components/Image.svelte';
 </script>
 
 <h1>Band Members</h1>
 
-{JSON.stringify(bandMembers, null, 2)}
+<!-- {JSON.stringify(bandMembers, null, 2)} -->
 
 {#if bandMembers}
 	<div class="w-full text-2xl text-center py-8">
@@ -39,21 +40,9 @@
 			<div class="flex flex-col border py-2">
 				<p class="font-bold">Picture</p>
 				<div class="flex justify-center border py-2">
-					<img
-						class="basis-1/2 border-8 border-slate-800"
-						src="{member.picture.url}"
-						alt=""
-					/>
+					<Image url="{member.picture.url}" />
 				</div>
 			</div>
 		{/each}
 	</div>
 {/if}
-
-<style>
-	img {
-		max-width: 400px;
-		width: 100%;
-		height: auto;
-	}
-</style>
