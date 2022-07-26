@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 	import { enhance } from '$root/lib/form';
 	export let messages;

@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 	export const API_URL = process.env['JSON_PLACEHOLDER_ENDPOINT'];
 	console.log(API_URL);
