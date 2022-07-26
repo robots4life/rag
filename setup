@@ -1,0 +1,9 @@
+npm install graphql --save-dev --verbose
+
+npm install graphql-request --save-dev --verbose
+
+on update -
+
+npm install --save-dev tailwindcss postcss autoprefixer @sveltejs/adapter-node@next @sveltejs/adapter-static@next env-cmd --verbose
+
+npx tailwindcss init tailwind.config.cjs -p

@@ -7,5 +7,5 @@ node_modules
 .env.*
 !.env.example
 .vscode
-setup
+repo_setup
 notepad/
