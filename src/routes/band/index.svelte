@@ -1,6 +1,6 @@
 <script>
 	export let bandMembers;
-	import Image from '$root/components/Image.svelte';
+	// import Image from '$root/components/Image.svelte';
 	import Picture from '$root/components/Picture.svelte';
 </script>
 

@@ -2,7 +2,7 @@
 	export let member;
 	// console.log(member);
 
-	export const classes = '';
+	export let classes;
 	// console.log(classes);
 
 	const steps = [
@@ -42,7 +42,7 @@
 
 <!-- {JSON.stringify(picture, null, 2)} -->
 
-<picture>
+<picture class="basis-1/2 border">
 	<source sizes="" srcset="{srcSetWep}" type="image/webp" />
 
 	<!-- <img style="max-width: 100px; max-height: auto;" src="{picture.url}" alt="" sizes="" srcset="" /> -->
