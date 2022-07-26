@@ -9,4 +9,3 @@ node_modules
 .vscode
 repo_setup
 notepad/
-src/components/Picture.svelte
