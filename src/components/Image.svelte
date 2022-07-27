@@ -2,7 +2,7 @@
 	export let url;
 </script>
 
-<img class="basis-1/2 border-8 border-slate-800" src="{url}" alt="" />
+<img loading="lazy" class="basis-1/2 border-8 border-slate-800" src="{url}" alt="" />
 
 <style>
 	img {
