@@ -1,3 +1,8 @@
+<script context="module">
+	// export const hydrate = false;
+	export const prerender = false;
+</script>
+
 <script>
 	import { enhance } from '$root/lib/form';
 	export let messages;

@@ -1,8 +1,7 @@
-<script context="module">
+<!-- <script context="module">
 	export const hydrate = false;
 	export const prerender = true;
-</script>
-
+</script> -->
 <script>
 	export const API_URL = process.env['JSON_PLACEHOLDER_ENDPOINT'];
 	console.log(API_URL);

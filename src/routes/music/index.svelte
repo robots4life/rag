@@ -1,6 +1,6 @@
-<script context="module">
+<!-- <script context="module">
 	export const hydrate = false;
-</script>
+</script> -->
 
 <h1>Music</h1>
 <p>
