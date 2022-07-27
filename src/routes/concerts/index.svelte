@@ -3,6 +3,8 @@
 	export const prerender = true;
 </script> -->
 <script>
+	// import Picture from '$root/components/Picture.svelte';
+
 	export let concerts;
 </script>
 
@@ -93,7 +95,13 @@
 						<div class="flex py-2">
 							<p class="basis-1/2 border">Picture</p>
 							<!-- <p class="basis-1/2 border">{member.picture}</p> -->
-							<img src="{member.picture.url}" alt="" />
+							<img
+								loading="lazy"
+								width="{member.Picture.width}"
+								height="{member.picture.height}"
+								src="{member.picture.url}"
+								alt=""
+							/>
 						</div>
 					{/each}
 				</div>
