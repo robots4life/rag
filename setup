@@ -12,3 +12,6 @@ npx tailwindcss init tailwind.config.cjs -p
 // deploy to vercel
 
 1. make sure all environment variables are added to Vercel don't forget the GRAPHQL_ENDPOINT ;)
+
+
+npm install --save-dev svelte-preprocess --verbose
