@@ -1,6 +1,6 @@
-import adapter from '@sveltejs/adapter-auto';
+// import adapter from '@sveltejs/adapter-auto';
 
-// import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-static';
 
 import preprocess from 'svelte-preprocess';
 
@@ -14,18 +14,18 @@ const config = {
 	kit: {
 		// //
 		//
-		adapter: adapter(),
+		// adapter: adapter(),
 		//
 		// adapter
 		// https://github.com/sveltejs/kit/tree/master/packages/adapter-static
-		// adapter: adapter({
-		// 	// default options are shown
-		// 	pages: 'build',
-		// 	assets: 'build',;
-		// 	trailingSlash: 'always'
-		// 	// fallback: null,
-		// 	// precompress: false
-		// }),
+		adapter: adapter({
+			// default options are shown
+			pages: 'build',
+			assets: 'build',
+			trailingSlash: 'never'
+			// fallback: null,
+			// precompress: false
+		}),
 
 		//
 		// inline css
