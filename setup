@@ -17,3 +17,5 @@ npx tailwindcss init tailwind.config.cjs -p
 npm install --save-dev svelte-preprocess --verbose
 
 npm install --save-dev cssnano --verbose
+
+// remember to change skitup and skit repos with this cssnano stuff :) !

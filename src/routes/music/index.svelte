@@ -1,3 +1,7 @@
+<script context="module">
+	export const hydrate = false;
+</script>
+
 <h1>Music</h1>
 <p>
 	Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro minus sapiente quis dolorem
