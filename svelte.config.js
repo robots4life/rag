@@ -6,12 +6,12 @@ import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+	preprocess: [
+		preprocess({
+			postcss: true
+		})
+	],
 	kit: {
-		preprocess: [
-			preprocess({
-				postcss: true
-			})
-		],
 		//
 		//
 		adapter: adapter(),
