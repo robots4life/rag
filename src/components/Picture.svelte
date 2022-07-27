@@ -57,5 +57,7 @@
 		alt=""
 		sizes="(min-width: 1540px) 1448px, (min-width: 1280px) 1192px, (min-width: 1040px) 936px, (min-width: 780px) 680px, (min-width: 680px) 552px, calc(94.44vw - 71px)"
 		srcset="{srcSet}"
+		width="{member.picture.width}"
+		height="{member.picture.height}"
 	/>
 </picture>
