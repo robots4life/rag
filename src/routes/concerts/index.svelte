@@ -97,7 +97,7 @@
 							<!-- <p class="basis-1/2 border">{member.picture}</p> -->
 							<img
 								loading="lazy"
-								width="{member.Picture.width}"
+								width="{member.picture.width}"
 								height="{member.picture.height}"
 								src="{member.picture.url}"
 								alt=""
