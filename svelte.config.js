@@ -27,6 +27,13 @@ const config = {
 		// 	// precompress: false
 		// }),
 
+		//
+		// inline css
+		//
+		// https://github.com/sveltejs/kit/issues/962
+		// inline all stylesheets smaller than 1kb
+		inlineStyleThreshold: 1024000,
+
 		// //
 		// prerender
 		//
